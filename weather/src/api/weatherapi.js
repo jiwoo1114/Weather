@@ -2,17 +2,18 @@ import axios from 'axios';
 
 // 기본 URL과 헤더를 설정한 axios 인스턴스 생성
 const BASE_URL = "https://api.openweathermap.org/data/2.5/";
-const AUTH_KEY = process.env.REACT_APP_WEATHER_API_KEY
+
+const AUTH_KEY =  process.env.REACT_APP_WEATHER_API_KEY
 
 //동적을 위한 api 키 요소 
-const apiKey = "12a7c2e02e8360441720bcab20b37aed";
+//const apiKey = "12a7c2e02e8360441720bcab20b37aed";
 
 // api call을 준비하기 위한 axios 인스턴스 생성
 const weatherApi = axios.create({
-  baseURL: BASE_URL,  // 기본 URL 설정
+  baseURL: BASE_URL,  // 기본 URL 설정 https://api.openweathermap.org/data/2.5/
   headers: {
-      accept: BASE_URL,  // 응답을 JSON 형태로 받기
-      AUTH_KEY: AUTH_KEY,
+      accept: 'application/json',  // 응답을 JSON 형태로 받기
+      Authorization:AUTH_KEY 
   }
 });
 
@@ -20,15 +21,16 @@ const weatherApi = axios.create({
 const fetchFromApi = async (url, params = {}) => {
    try {
       // params에 API 키 추가
-      const response = await simplewApi.get(url, {
+      const response = await weatherApi.get(url, {
          params: {
             ...params,             // 전달받은 params를 그대로 확장
             appid: AUTH_KEY,    // OpenWeatherMap에서는 appid 파라미터로 API 키를 받음
          },
-      })
-      return response
+      });
+      console.log('api 응답 데이터:', response.data);
+      return response.data
    } catch (error) {
-      console.error(`API 요청 오류: ${error.message}`)
+      console.error(`서버 오류: ${error.message}`)
       throw error  // 에러를 다시 던져서 호출한 곳에서 처리할 수 있게
    }
 }
@@ -36,40 +38,45 @@ const fetchFromApi = async (url, params = {}) => {
 
 
 // 날씨 API 호출 함수(현재날씨,메인창 )
-// 날씨 정보 요청 함수
-async function getWeather(cityName) {
-   const url = 'https://api.openweathermap.org/data/2.5/weather';  // 날씨 API 엔드포인트
-   const params = {
-      q: cityName,          // 도시 이름
-      units: 'metric',      // 온도 단위 (섭씨)
-      lang: 'kr',           // 언어 설정 (한국어)
-   };
-   try {
-      const data = await fetchFromApi(url, params);  // 공통 API 호출 함수 사용
-      console.log("날씨 정보:", data);
-      // 여기서 data는 응답 받은 날씨 정보 객체입니다. 이를 원하는 형태로 가공하거나 UI에 표시할 수 있습니다.
-   } catch (error) {
-      console.error("날씨 정보를 가져오는 데 실패했습니다.", error);
-   }
+// 현재날씨 정보 요청 함수
+export const getWeather = (q = 'incheon') => {
+
+   return fetchFromApi('/weather', {
+      q,
+      units:'metric',
+      lang:'kr',
+   })
+}
+
+//5일 날씨를 3시간마다 갱신해서 알려주는 함수
+export const getWeeksWeather = (q = 'incheon') => {
+   return fetchFromApi(`/forecast`, {
+      lang: 'kr',
+      q,
+      units: 'metric',
+   })
 }
 
 
 // 공기질 정보 API 호출 함수(미세먼지)
 // 공기질 정보 요청 함수
-async function getAirPollution(lat, lon) {
-   const url = 'https://api.openweathermap.org/data/2.5/air_pollution';  // 공기질 API 엔드포인트
-   const params = {
-      lat: lat,    // 위도
-      lon: lon,    // 경도
-   };
+export const getAirPollution = async (q='incheon') => {
    try {
-      const data = await fetchFromApi(url, params);  // 공통 API 호출 함수 사용
-      console.log("공기질 정보:", data);
-      // 여기서 data는 응답 받은 공기질 정보 객체입니다. 이를 원하는 형태로 가공하거나 UI에 표시할 수 있습니다.
+      //getWeather 함수에서 경도위도 값 가져오기
+      const Weatherpolice = await getWeather(q)
+      const { coord } = Weatherpolice.data
+
+      // 위도와 경도를 사용하여 대기 상태 정보 가져오기
+      return fetchFromApi(`/air_pollution`, {
+         lat: coord.lat,
+         lon: coord.lon,
+      })
+
    } catch (error) {
-      console.error("공기질 정보를 가져오는 데 실패했습니다.", error);
+      console.error("공기질 정보 오류.", error);
    }
 }
 
 
 
+export default  weatherApi

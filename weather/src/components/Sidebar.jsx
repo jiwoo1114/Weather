@@ -1,14 +1,11 @@
-import { Sidebar } from "../styles/styled";
+
+import './CSS/Sidebar.css'
 import React from 'react'
 
-function Sidebar2() {
-    return (
-       <Sidebar>
-            {/* Sidebar 내용 */}
-            
-             <p></p>
-        </Sidebar>
+function Sidebar() {
+     return (
+          <div className="sidebar"></div>
      );
 }
 
-export default Sidebar2;
+export default Sidebar;
