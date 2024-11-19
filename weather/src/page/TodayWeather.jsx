@@ -1,12 +1,22 @@
 //오늘날씨창
 
 import React from 'react';
+import '../styles/common.css'
+import Menubar from '../components/Menubar';
+import Sidebar from '../components/Sidebar'
+import { Wrap,Main } from '../styles/styled';
+
 
 const TodayWeather = () => {
     return (
-        <div>
-            <h1>오늘의 날씨 페이지 준비 중!</h1>
-        </div>
+        <Wrap>
+            <Menubar /> 
+            <Sidebar/>
+             <Main>
+                 
+             </Main>
+         </Wrap>
+
     );
 };
 

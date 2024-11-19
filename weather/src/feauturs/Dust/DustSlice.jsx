@@ -3,7 +3,7 @@ import { getAirPollution } from "../../api/weatherapi";
 
 // 비동기 Thunk 액션 - 공기질 API에서 데이터 가져오기
 export const fetchairpollution = createAsyncThunk(
-   "airpollution/fetchairpollution",
+   "/airpollution/fetchairpollution",
    async ({ lat, lon }) => {
       const response = await getAirPollution({ lat, lon }); // API 호출
       return response.data;
@@ -15,7 +15,7 @@ const AirpollutionSlice = createSlice({
    name: "airpollution",
    initialState: {
       loading: false, // 로딩 여부
-      air: {},      // 공기질 데이터를 저장
+      air: null,      // 공기질 데이터를 저장
       error: null,    // 에러 메시지 저장
    },
    reducers: {

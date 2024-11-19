@@ -10,14 +10,13 @@ import { Wrap,Main } from '../styles/styled';
  function Menu() {
      return ( 
          <Wrap>
-            <Menubar/> 
+             <Menubar /> 
+             <Sidebar/>
              <Main>
                  <Maincard></Maincard>
              </Main>
              <Footer/>
          </Wrap>
-
-         
     )
  }
 

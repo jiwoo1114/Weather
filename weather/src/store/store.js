@@ -4,8 +4,8 @@ import airpollutionReducer from '../feauturs/Dust/DustSlice'
 
    const store = configureStore({
     reducer: {
-        weather: todayweatherReducer,
-        air:airpollutionReducer,
+        todayweather: todayweatherReducer,
+        airpollution:airpollutionReducer,
     }
 })
 

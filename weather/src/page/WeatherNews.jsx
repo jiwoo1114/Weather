@@ -1,11 +1,22 @@
 //뉴스창
 import React from 'react';
+import '../styles/common.css'
+import Menubar from '../components/Menubar';
+import Newslist from '../components/Newslist';
+import { Wrap,Main } from '../styles/styled';
+import Sidebar from '../components/Sidebar';
+
 
 const WeatherNews = () => {
     return (
-        <div>
-            <h1>날씨뉴스 페이지 준비 중!</h1>
-        </div>
+         <Wrap>
+            <Menubar /> 
+            <Sidebar/>
+             <Main>
+                 <Newslist></Newslist>
+             </Main>
+         </Wrap>
+
     );
 };
 

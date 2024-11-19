@@ -22,6 +22,7 @@ ul {
 }
 
  ul li{
+    font-weight: bolder;
     text-decoration: none;
     color: black;
  }
