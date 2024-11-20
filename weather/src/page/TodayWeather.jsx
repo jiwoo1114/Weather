@@ -5,16 +5,19 @@ import '../styles/common.css'
 import Menubar from '../components/Menubar';
 import Sidebar from '../components/Sidebar'
 import { Wrap,Main } from '../styles/styled';
+import Today from '../components/Today';
+import Footer from '../components/Footer';
 
 
 const TodayWeather = () => {
     return (
         <Wrap>
-            <Menubar /> 
+            <Menubar/> 
             <Sidebar/>
-             <Main>
-                 
-             </Main>
+             <Main $padding="30px 0">
+                 <Today></Today>
+            </Main>
+            <Footer/>
          </Wrap>
 
     );

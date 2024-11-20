@@ -10,6 +10,7 @@ export const fetchTodayWeather = createAsyncThunk(
    }
 );
 
+//5일치 날씨 비동기액션
 export const fetchWeeksWeather = createAsyncThunk(
    '/todayweather/fetchWeeksWeather',
    async (q) => {

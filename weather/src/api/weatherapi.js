@@ -53,26 +53,4 @@ export const getWeeksWeather = (q = 'incheon') => {
    })
 }
 
-
-// 공기질 정보 API 호출 함수(미세먼지)
-// 공기질 정보 요청 함수
-export const getAirPollution = async (q='incheon') => {
-   try {
-      //getWeather 함수에서 경도위도 값 가져오기
-      const Weatherpolice = await getWeather(q)
-      const { coord } = Weatherpolice.data
-
-      // 위도와 경도를 사용하여 대기 상태 정보 가져오기
-      return fetchFromApi(`/air_pollution`, {
-         lat: coord.lat,
-         lon: coord.lon,
-      })
-
-   } catch (error) {
-      console.error("공기질 정보 오류.", error);
-   }
-}
-
-
-
 export default  weatherApi

@@ -1,6 +1,10 @@
 
 import { NavLink } from 'react-router-dom';
 import './CSS/Menubar.css'
+import { GiClothes } from "react-icons/gi";
+import { CiCloudSun } from "react-icons/ci";
+import { PiRainbowCloudFill } from "react-icons/pi";
+import { FaCloud } from "react-icons/fa";
 //import '../styles/common.css'
 
 
@@ -11,24 +15,24 @@ function Menubar() {
                 <ul className='"nav-list"'>
                     <li>
                         <NavLink to='/'>
-                            <img src="/images/구름 로고.PNG" alt="구름" />
+                            <FaCloud  className="custom-icon" />
                         </NavLink>
                     </li>
                     <li className='list'>
                         <NavLink to='TodayWeather'>
-                            <img src="/images/해 로고.PNG" alt="해" />
+                            <CiCloudSun />
                             <p>오늘날씨</p>
                         </NavLink>
                     </li>
                     <li className='list'> 
-                        <NavLink to='Dust'>
-                             <img src="/images/마스크 로고.PNG" alt="마스크" />
-                            <p>미세먼지</p>
+                        <NavLink to='WeatherCloth'>
+                            <GiClothes/>
+                            <p>날씨별 Daily</p>
                         </NavLink>
                     </li>
                     <li className='list'>
                         <NavLink to='weatherNews'>
-                            <img src="/images/무지개 로고.PNG" alt="무지개" />
+                            <PiRainbowCloudFill />
                             <p>날씨's 정보</p>
                         </NavLink>
                     </li>

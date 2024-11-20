@@ -4,7 +4,7 @@ import React from 'react';
 import '../styles/common.css'
 import Menubar from '../components/Menubar';
 import Sidebar from '../components/Sidebar'
-import Dustposter from '../components/Dustposter'
+import Cloth from '../components/Cloth'
 import { Wrap,Main } from '../styles/styled';
 
 
@@ -14,7 +14,7 @@ const Dust = () => {
             <Menubar />
             <Sidebar/>
             <Main>
-            <Dustposter></Dustposter>
+            <Cloth></Cloth>
             </Main>
          </Wrap>
     );

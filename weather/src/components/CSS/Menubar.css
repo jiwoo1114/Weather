@@ -10,6 +10,8 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+    align-items: center;
+    justify-content: center;
     z-index: 1000;
 }
 
@@ -17,8 +19,8 @@ ul {
     display: flex;
     list-style-type: none;
     overflow: hidden;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
 }
 
  ul li{
@@ -59,6 +61,26 @@ ul li.list a {
     text-align: center;
     text-decoration: none;
     padding-right: 16px;
+}
+
+ul li.list a svg {
+    font-size: 50px;
+    padding-top: 5px;
+    /* 아이콘 크기 조정 */
+}
+.custom-icon {
+    font-size: 50px;
+    padding-top: 5px;
+    margin-left: 10px;
+    /* 아이콘 크기 */
+}
+
+
+ul li.list p {
+    font-size: 16px;
+    /* 텍스트 크기 */
+    margin: 0;
+    /* 불필요한 여백 제거 */
 }
 
 /* 첫번째 li 제외, active 클래스 있는 a 요소 제외 */

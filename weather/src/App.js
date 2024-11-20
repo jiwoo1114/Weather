@@ -1,7 +1,7 @@
 import './styles/common.css'
 
 import Menu from './page/Menu'
-import Dust from './page/Dust'
+import WeatherCloth from './page/WeatherCloth'
 import NotFound from './page/NotFound'
 import TodayWeather from './page/TodayWeather'
 import WeatherNews from './page/WeatherNews'
@@ -14,9 +14,9 @@ function App() {
    return ( 
       <Routes>
       <Route path='/' element={<Menu />} />
-      <Route path='/Dust' element={<Dust /> } />
-      <Route path='/TodayWeather' element={<TodayWeather /> } />
-      <Route path='/WeatherNews' element={<WeatherNews />} />
+      <Route path='/WeatherCloth/*' element={<WeatherCloth /> } />
+      <Route path='/TodayWeather/*' element={<TodayWeather /> } />
+      <Route path='/WeatherNews/*' element={<WeatherNews />} />
       <Route path='/*' element={<NotFound />} />
       </Routes>
    );
