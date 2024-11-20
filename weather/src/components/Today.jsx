@@ -67,13 +67,14 @@ const Today = () => {
 
     <>
       <h1>지역별 오늘의 날씨</h1>
-    <div className='muiform'>
+      <div className='muiform'>
+        <h3 style={{fontWeight:'bold'}}>도시명:{city}</h3>
       <TextField
-        label="도시명"
+        label="도시이름을 검색하세요"
         variant="outlined"
         value={city}
           onChange={handleCityChange}
-          sx={{ mb: 2 }} 
+          sx={{ mb: 2 ,mt: 2}} 
       />
       <Button
         variant="contained"

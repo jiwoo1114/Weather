@@ -7,7 +7,7 @@
     min-height: calc(100vh - 60px);
     /* 메뉴바 높이를 뺀 전체 높이 */
     gap: 60px; /* 기본 간격 */
-    padding-top: 100px;
+    padding-top: 30px;
 }
 
 h1{
