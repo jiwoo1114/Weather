@@ -1,0 +1,21 @@
+h1{
+    margin-bottom: 30px;
+}
+
+.typography-title {
+    margin-bottom: 10px;
+}
+
+.typography-emoji {
+    margin-bottom: 20px;
+}
+
+.typography-message {
+    margin-top: 5px;
+    /* 필요에 따라 간격 조정 */
+}
+
+.formbox{
+    background-color: #f2f2f2;
+    padding: 20px;
+}

@@ -5,7 +5,8 @@ import '../styles/common.css'
 import Menubar from '../components/Menubar';
 import Sidebar from '../components/Sidebar'
 import Cloth from '../components/Cloth'
-import { Wrap,Main } from '../styles/styled';
+import { Wrap, Main } from '../styles/styled';
+import Footer from '../components/Footer';
 
 
 const Dust = () => {
@@ -16,6 +17,7 @@ const Dust = () => {
             <Main>
             <Cloth></Cloth>
             </Main>
+            <Footer/>
          </Wrap>
     );
 };
