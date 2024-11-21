@@ -32,7 +32,7 @@ function Maincard() {
   const dispatch = useDispatch();
 
   // 상태 초기화
-  const [city, setCity] = useState(''); // 사용자 입력값
+  const [city, setCity] = useState('인천'); // 사용자 입력값
   const [cityKorean, setCityKorean] = useState('도시를 입력하세요'); // 기본값
   const [cityEnglish, setCityEnglish] = useState(''); // 변환된 영어 도시명
 
@@ -50,6 +50,11 @@ function Maincard() {
       setCityEnglish(''); // 영어 도시명 초기화
     }
   }, [city]);
+
+  // 컴포넌트가 처음 마운트되었을 때 인천의 날씨 정보를 불러오기
+  useEffect(() => {
+    dispatch(fetchTodayWeather('Incheon')); // 기본 도시로 인천의 날씨를 불러옵니다.
+  }, [dispatch]);
 
   // 날씨 데이터를 가져오는 함수
   const fetchWeather = () => {
