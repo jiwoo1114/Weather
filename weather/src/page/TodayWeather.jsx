@@ -1,4 +1,4 @@
-//오늘날씨창
+//지역별 오늘날씨창
 
 import React from 'react';
 import '../styles/common.css'

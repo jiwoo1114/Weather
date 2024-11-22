@@ -5,6 +5,7 @@ import { FaSearch } from 'react-icons/fa';
 import './CSS/MainCard.css'
 import '../styles/styled'
 
+//도시명 한국어 배열로 정리
 const koreanCities = [
   { name: "Goyang-si", korean: "고양" },
   { name: "Seoul", korean: "서울" },

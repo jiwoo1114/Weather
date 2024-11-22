@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Jua&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Jua', serif !important; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Gaegu', serif;
 }
 
-code {
+/*code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+}*/

@@ -95,7 +95,8 @@ function Cloth() {
                 <Typography variant="body1" sx={{fontSize:'20px',marginTop:'50px',fontWeight:'bold'}}>{clothing?.message}</Typography>
               </CardContent>
             </Card>
-          </Grid>
+            </Grid>
+            
           <Grid item xs={12} sm={6}>
             <Card sx={{ width: '400px', height: '350px' }}>
               <Typography variant="h5" sx={{  padding:'10px',marginTop:'20px'}}>오늘 날씨
@@ -105,13 +106,15 @@ function Cloth() {
                 image={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`}
                 alt={weather.weather[0].description}
                 sx={{ width:'150px',height: '150px', padding:'10px 0',marginLeft:'125px' }}
-              />
+                />
+                
               <CardContent>
                   <Typography variant="h5" sx={{fontWeight:'bold'}}>{weather.weather[0].description}</Typography>
                 <Typography variant="body1">
                   현재 온도: {weather.main.temp}°C
                 </Typography>
-              </CardContent>
+                </CardContent>
+                
             </Card>
           </Grid>
         </Grid>

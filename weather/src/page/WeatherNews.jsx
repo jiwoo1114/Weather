@@ -1,4 +1,4 @@
-//뉴스창
+//주간 예보창
 import React from 'react';
 import '../styles/common.css'
 import Menubar from '../components/Menubar';
@@ -16,10 +16,10 @@ import { useState } from 'react';
 
 const WeatherNews = () => {
 
- const [visibleCards, setVisibleCards] = useState(20); // 초기 표시 카드 수
+ const [visibleCards, setVisibleCards] = useState(10); // 초기 표시 카드 수
 
     const handleLoadMore = () => {
-        setVisibleCards((prev) => prev + 20); // 추가로 20개씩 표시
+        setVisibleCards((prev) => prev + 10); // 추가로 10개씩 표시
     };
 
 
@@ -31,7 +31,7 @@ const WeatherNews = () => {
                 <Newslist visibleCards={visibleCards}></Newslist>
                  {/* 더보기 버튼 */}
                 <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                    <Button variant='contained' onClick={handleLoadMore}>항목 더보기</Button>
+                    <Button variant='contained' onClick={handleLoadMore} sx={{backgroundColor:'#08A1E3'}}>항목 더보기</Button>
                 </div>
             </Main>
             <Footer/>

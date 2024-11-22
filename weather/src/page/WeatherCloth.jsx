@@ -1,4 +1,4 @@
-//미세먼지창
+//날씨별 옷 추천창
 
 import React from 'react';
 import '../styles/common.css'

@@ -1,4 +1,4 @@
-//첫번째 메인화면
+//첫번째 메인화면(입력 도시의 바람,기온,일출일몰)
 
 import '../styles/common.css'
 import Menubar from '../components/Menubar';

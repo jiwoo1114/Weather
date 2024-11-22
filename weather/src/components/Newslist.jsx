@@ -94,22 +94,22 @@ function Todayslider({ visibleCards }) {
 
       {/* 날씨 카드 */}
       {weeksweather && weeksweather.list && (
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", justifyContent: "center" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", justifyContent: "center",backgroundColor:'#f2f2f2', padding:'10px' }}>
          {displayedWeather.map((day, index) => {
             const iconUrl = `http://openweathermap.org/img/wn/${day.weather[0].icon}@4x.png`;
             const temp = day.main.temp;
             const description = day.weather[0].description;
             const dateWithDayAndTime = formatDateWithDayAndTime(day.dt);  // 날짜, 요일, 시간 추출
 
-            return (
-              <Card key={index} sx={{ maxWidth: 200 }}>
-                <CardMedia component="img" image={iconUrl} alt={description} sx={{ height: 100 }} />
+           return (
+              <Card key={index} sx={{ maxWidth: 200}}>
+                <CardMedia component="img" image={iconUrl} alt={description} sx={{ height: 120, paddingTop:'10px'}} />
                 <CardContent>
                   <Typography variant="h5">{dateWithDayAndTime}</Typography>  {/* 날짜, 요일, 시간대 추가 */}
                   <Typography variant="h6">{description}</Typography>
                   <Typography variant="body2">온도: {temp}°C</Typography>
                 </CardContent>
-              </Card>
+               </Card>
             );
           })}
         </div>
